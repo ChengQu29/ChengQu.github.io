@@ -12,7 +12,12 @@
 .site-title-container {
   display: flex;
   align-items: center;
-  gap: 0.75em;
+  justify-content: center;
+  gap: 0.15em; /* tighten spacing between title and toggle */
+}
+
+.site-title {
+  position: relative;
 }
 
 .theme-toggle--title {
@@ -20,7 +25,7 @@
   border: none;
   color: inherit;
   cursor: pointer;
-  padding: 0.35em;
+  padding: 0.1em; /* smaller padding so it sits closer to title */
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -40,7 +45,19 @@
 
 /* Theme icon styles */
 .theme-icon {
+  display: block; /* remove inline svg whitespace/baseline gaps */
   transition: opacity 0.3s ease;
+}
+
+/* Remove default margins that create extra space around the title */
+.greedy-nav .site-title-container .site-title {
+  margin: 0; /* overrides .greedy-nav a { margin: 0 1rem; } */
+}
+
+/* Eliminate left margin inherited by .theme-toggle inside masthead */
+.site-title-container .theme-toggle {
+  margin-left: 0.1em !important; /* override _masthead.scss margin-left */
+  padding: 0.1em; /* keep target size while keeping it tight */
 }
 
 /* Dark mode styles */
