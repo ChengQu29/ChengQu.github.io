@@ -120,6 +120,9 @@ author:
   location         : "Ottawa, CA"
   email            :
   links:
+    - label: "CV"
+      icon: "fas fa-fw fa-file-alt"
+      url: "https://github.com/ChengQu29"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:cq6507@mun.ca"
