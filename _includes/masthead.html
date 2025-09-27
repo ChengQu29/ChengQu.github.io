@@ -9,6 +9,32 @@
             {{ site.masthead_title | default: site.title | escape_once | strip }}
             {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
           </a>
+          <button class="theme-toggle theme-toggle--title" type="button" aria-label="Toggle Dark Mode">
+            <!-- Sun icon for light mode -->
+            <svg class="theme-icon theme-icon--sun" width="25" height="25" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="4" />
+              <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="19.78" y1="4.22" x2="18.36" y2="5.64" />
+                <line x1="5.64" y1="18.36" x2="4.22" y2="19.78" />
+              </g>
+            </svg>
+            <!-- Moon icon for dark mode -->
+            <svg class="theme-icon theme-icon--moon" width="25" height="25" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+              <!-- Main crescent moon -->
+              <path d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 0 0 12 21a9.003 9.003 0 0 0 8.354-5.646z" fill="currentColor"/>
+              <!-- Small stars -->
+              <circle cx="5" cy="7" r="0.8" fill="currentColor" opacity="0.8"/>
+              <circle cx="3" cy="12" r="0.6" fill="currentColor" opacity="0.6"/>
+              <circle cx="6" cy="16" r="0.5" fill="currentColor" opacity="0.7"/>
+              <circle cx="19" cy="5" r="0.4" fill="currentColor" opacity="0.5"/>
+            </svg>
+          </button>
         </div>
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
@@ -27,9 +53,6 @@
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
-        <button class="theme-toggle" type="button" aria-label="Toggle Dark Mode">
-          <i class="fas fa-moon"></i>
-        </button>
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>

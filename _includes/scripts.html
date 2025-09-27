@@ -36,10 +36,13 @@
     // Set up theme toggle
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
-      // Set initial icon
-      const icon = themeToggle.querySelector('i');
-      if (icon) {
-        icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+      const moonIcon = themeToggle.querySelector('.theme-icon--sun');
+      const sunIcon = themeToggle.querySelector('.theme-icon--moon');
+      
+      // Set initial icon visibility
+      if (sunIcon && moonIcon) {
+        sunIcon.style.display = isDark ? 'none' : 'inline';
+        moonIcon.style.display = isDark ? 'inline' : 'none';
       }
 
       // Handle click
@@ -48,10 +51,10 @@
         const nowDark = document.body.classList.contains('dark');
         localStorage.setItem('theme', nowDark ? 'dark' : 'light');
         
-        // Update icon
-        const icon = this.querySelector('i');
-        if (icon) {
-          icon.className = nowDark ? 'fas fa-sun' : 'fas fa-moon';
+        // Update icon visibility
+        if (sunIcon && moonIcon) {
+          sunIcon.style.display = nowDark ? 'none' : 'inline';
+          moonIcon.style.display = nowDark ? 'inline' : 'none';
         }
       });
     }
