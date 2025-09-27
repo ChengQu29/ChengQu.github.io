@@ -90,3 +90,19 @@ body.dark .greedy-nav a {
 body.dark .greedy-nav a:hover {
   color: #58a6ff;
 }
+
+/* Dark mode: make links same as text; slightly darker on hover */
+body.dark a:not(.btn) {
+  color: inherit;
+}
+
+body.dark a:not(.btn):hover {
+  /* 15% toward black from #e0e0e0 for subtle contrast */
+  color: mix(#000, #e0e0e0, 15%);
+}
+
+/* Preserve white links in hero overlays and captions in dark mode */
+body.dark .page__hero--overlay a,
+body.dark .page__hero-caption a {
+  color: #fff;
+}
