@@ -18,7 +18,7 @@ theme: minimal-mistakes-jekyll
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Cheng's personal website"
+title                    : " "
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Cheng Qu"
@@ -29,7 +29,6 @@ repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-m
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-masthead_title           : "Resume"
 breadcrumbs              : # true, false (default)
 words_per_minute         : 200
 enable_copy_code_button  : # true, false (default)

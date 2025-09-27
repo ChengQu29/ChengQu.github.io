@@ -18,6 +18,18 @@
   }
 }
 
+.list__item {
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #eaeaea;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
 .archive__item {
   position: relative;
 
