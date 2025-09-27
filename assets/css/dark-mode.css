@@ -1,0 +1,79 @@
+/* Dark mode styles */
+body.dark-theme {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --link-color: #66b3ff;
+    --heading-color: #ffffff;
+    --border-color: #404040;
+    --code-background: #2d2d2d;
+    --blockquote-border: #404040;
+    --blockquote-text: #cccccc;
+    --table-border: #404040;
+    --table-header-bg: #2d2d2d;
+    --table-alternate-bg: #262626;
+}
+
+body.dark-theme {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body.dark-theme a {
+    color: var(--link-color);
+}
+
+body.dark-theme h1, 
+body.dark-theme h2, 
+body.dark-theme h3, 
+body.dark-theme h4, 
+body.dark-theme h5, 
+body.dark-theme h6 {
+    color: var(--heading-color);
+}
+
+body.dark-theme code {
+    background-color: var(--code-background);
+}
+
+body.dark-theme blockquote {
+    border-left-color: var(--blockquote-border);
+    color: var(--blockquote-text);
+}
+
+body.dark-theme table {
+    border-color: var(--table-border);
+}
+
+body.dark-theme th {
+    background-color: var(--table-header-bg);
+}
+
+body.dark-theme tr:nth-child(even) {
+    background-color: var(--table-alternate-bg);
+}
+
+/* Dark mode toggle button styles */
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    color: inherit;
+}
+
+.dark-theme #dark-mode-toggle .fa-sun {
+    display: inline-block;
+}
+
+.dark-theme #dark-mode-toggle .fa-moon {
+    display: none;
+}
+
+#dark-mode-toggle .fa-sun {
+    display: none;
+}
+
+#dark-mode-toggle .fa-moon {
+    display: inline-block;
+}
