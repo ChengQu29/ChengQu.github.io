@@ -18,6 +18,24 @@
     max-width: 100%;
     font-family: $sans-serif-narrow;
 
+    .theme-toggle {
+      padding: 0.5rem;
+      margin-left: 1rem;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
+      
+      &:hover {
+        color: $primary-color;
+      }
+
+      i {
+        font-size: 1.2em;
+      }
+    }
+
     @include breakpoint($x-large) {
       max-width: $max-width;
     }
