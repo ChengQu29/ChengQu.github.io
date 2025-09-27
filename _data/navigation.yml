@@ -1,9 +1,5 @@
 # main links
 main:
-  - title: "Resume"
-    url: /assets/cv.pdf
-  - title: "About"
-    url: /
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
