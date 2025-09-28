@@ -106,3 +106,23 @@ body.dark .page__hero--overlay a,
 body.dark .page__hero-caption a {
   color: #fff;
 }
+
+/* Center footer content */
+.page__footer footer {
+  text-align: center;
+}
+
+.page__footer-follow,
+.page__footer-follow ul {
+  text-align: center;
+}
+
+.page__footer-copyright {
+  text-align: center;
+}
+
+/* Remove circular border around author avatar image */
+.author__avatar img {
+  padding: 0 !important; /* override sidebar.scss padding */
+  border: none !important; /* remove 1px border */
+}
