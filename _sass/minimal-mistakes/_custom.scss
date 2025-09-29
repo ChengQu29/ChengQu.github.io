@@ -3,8 +3,8 @@
    ========================================================================== */
 
 .custom-bio {
-  padding-bottom: 2em;
-  margin-bottom: 2em;
+  padding-bottom: 0.1em;
+  margin-bottom: 0.1em;
   border-bottom: 1px solid #eaeaea;
 }
 
@@ -125,4 +125,28 @@ body.dark .page__hero-caption a {
 .author__avatar img {
   padding: 0 !important; /* override sidebar.scss padding */
   border: none !important; /* remove 1px border */
+}
+
+/* ----------------------------------------------
+   Post list spacing (tighter between posts)
+   ---------------------------------------------- */
+/* List view (default on home/archives) */
+.list__item {
+  padding-bottom: 0.1em; /* was 2em */
+  margin-bottom: 0.1em;  /* was 2em */
+  border-bottom: 1px solid #eaeaea; /* keep a subtle divider; set to 0 to remove */
+}
+
+/* Grid view cards (if using grid layout) */
+.grid__item {
+  margin-bottom: 1em; /* was 2em */
+}
+
+/* Slightly tighten title/excerpt spacing inside each item */
+.archive__item-title {
+  margin-bottom: 0.15em; /* was 0.25em */
+}
+
+.archive__item-excerpt {
+  margin-top: 0.25em; /* was 0 */
 }

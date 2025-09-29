@@ -7,7 +7,7 @@ categories: [blog]
 tags: [C]
 ---
 
-Here, I share my understanding and explanation of callback function, one of the key building blocks of a multi-threading file sharing server I developed in the OMSCS program.. 
+Welcome to my first post! Here’s my explanation of how to implement callbacks, one of the key building blocks of a multi-threading file sharing server I developed in the OMSCS program.
 
 A callback is a function that you pass as an argument to another function. The receiving function can then invoke the callback at a particular point, allowing for flexible and resuable code.
 

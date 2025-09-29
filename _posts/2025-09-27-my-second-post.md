@@ -7,7 +7,7 @@ categories: [blog]
 tags: [C]
 ---
 
-Welcome to my second post! This is my understanding of the memory ownership model, one of the key building blocks for a multi-threading high performance file sharing server. 
+Hey, there! This is my understanding of the memory ownership model, one of the key building blocks for a multi-threading high performance file sharing server. 
 
 For languages that doesn't have garbage collection mechanism, such as C/C++, following good practices can greatly reduce the possibility of running into memory safety issues. 
 
@@ -105,4 +105,4 @@ This way:
 
 In this way, the use of double pointers makes ownership and cleanup responsibilities explicit across the call chain, and ensures that all functions have a consistent view of whether the memory is still valid.
 
-If you’ve taken the time to read this far, I’m truly flattered—and I can’t wait to show you how a high-performance, multi-threaded file-sharing server is built. Stay tuned!
+If you’ve taken the time to read this far, I’m truly flattered—and I can’t wait to show you how a highly scalable, multi-threaded file-sharing server is built. Stay tuned!
