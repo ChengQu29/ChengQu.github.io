@@ -7,9 +7,15 @@ categories: [blog]
 tags: [multi-threading]
 ---
 
-Design
+In this project, I designed a multi-threaded server that serves static files based on the GetFile protocol, which is a simple HTTP-like protocol. Alongside the server,  I also create a multi-threaded client that acts as a load generator for the server. Both the server and client will be written in C and be based on a sound, scalable design.
 
-Converting the code that retrieves the file from disc with code that retrieves it from web, the webproxy pass in a server url which will be passed into the callback registered via the GFS_WORKER_FUNC. After understanding this, the design is pretty straight forward. We would need a buffer to hold the url, and construct a full url from the argument passed in. 
+This project is build on top of the OMSCS's graduate introduction to operating system. The client side interface is inspired by the open source libcurl's "easy" interface. The server side interface is inspired by python's built-in httpserver. 
+
+The initial design is based on the boss-worker multi-threading pattern first introduced by the Birrell paper. 
+
+![Multi-threading client and server](/assets/images/multi-threading_server_and_client.png)
+
+Converting the code that retrieves the file from disc with code that retrieves it from web, the webproxy pass in a server url which will be passed into the callback registered via the GFS_WORKER_FUNC. We would need a buffer to hold the url, and construct a full url from the argument passed in. 
 
 Then we will construct a new curl easy setopt object. We define a function to accept LibCurl’s output into a struct (BufferStruct) and pass a function pointer to LC. This callback function writes the output to BufferStruct. 
 
@@ -28,10 +34,8 @@ Design:
 
 Multithreaded proxy will interreact with multithreaded cache processes located on the same physical machine. Each of the request received by A worker of the proxy need to be relay over to the cache, the cache need to respond to request with the file content with the specific requirement that file transfer must be performed using shared memory and only one shared memory segment need to be used for a file transfer.
 
-The design diagram for major components:
-
- 
-
+Here is the design diagram for major components:
+![File Server Design](/assets/images/file_server_design.png)
 
 The first important design choice is the separation of data channel and communication channel.  Use the shared memory only for storing file content and pass the request via message queue. The separation has many benefits, first and foremost is the simplicity compared with only using shared memory for both storing file and pass request.  The shared memory would require complex coordination. Both cache and proxy worker need to take turns to write and read to it, because it’s sending data in chunks. It will reduce complexity if we can separate request passing functionality. Secondly, because the request needs to make its way from proxy to cache in one direction only, it makes sense to use a message queue for that. 
 

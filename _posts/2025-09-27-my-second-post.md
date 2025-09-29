@@ -11,7 +11,7 @@ Welcome to my second post! This is my understanding of the memory ownership mode
 
 For languages that doesn't have garbage collection mechanism, such as C/C++, following good practices can greatly reduce the possibility of running into memory safety issues. 
 
-The core problems when it comes to managing memory include double free, use-after-free or memory leak if a block of memory is not freed. One proposal for safely managing memory is called the [pointer ownership](https://www.sei.cmu.edu/blog/using-the-pointer-ownership-model-to-secure-memory-management-in-c-and-c/) model. 
+The core problems when it comes to managing memory include double free, use-after-free or memory leak if a block of memory is not freed etc. One proposal for safely managing memory is called the [pointer ownership](https://www.sei.cmu.edu/blog/using-the-pointer-ownership-model-to-secure-memory-management-in-c-and-c/) model. 
 
 Memory ownership means deciding who is responsible for freeing a given block of memory. The main idea (well..greatly simplified by me) is that assuming you know there is only one valid pointer to a block of memory, if you have the pointer you can free it. So the question is how do we make sure there is only one 'owner' to a block of memory?
 

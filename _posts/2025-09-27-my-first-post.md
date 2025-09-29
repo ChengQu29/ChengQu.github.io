@@ -23,7 +23,7 @@ button.addEventListener('click', () => {
 });
 ```
 
-Unlike Python or JavaScript, functions are not first-class citizens in C, meaning you can't assign them to variables, pass them as arguemtns, store them in data structures or return them from other functions etc. How does C perform 'callbacks'?
+Unlike Python or JavaScript, functions are not first-class citizens in C, meaning you can't assign them to variables, pass them as arguments, store them in data structures or return them from other functions etc. How does C perform 'callbacks'?
 
 We can leverage the function pointer construct in C.
 Here’s a small example:
