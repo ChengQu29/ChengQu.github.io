@@ -7,7 +7,7 @@ categories: [blog]
 tags: [C]
 ---
 
-Hey, there! This is my understanding of the memory ownership model, one of the key building blocks for a multi-threading high performance file sharing server. 
+Hey, there! This is my understanding of the memory ownership model, one of the key building blocks for a multi-threading highly scalable file sharing server. 
 
 For languages that doesn't have garbage collection mechanism, such as C/C++, following good practices can greatly reduce the possibility of running into memory safety issues. 
 
