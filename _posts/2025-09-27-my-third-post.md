@@ -12,13 +12,13 @@ Previously, I designed a multi-threaded server that serves static files based on
 This project was build on top of the OMSCS's graduate introduction to operating system. The client side interface is inspired by the open source [libcurl's "easy" interface](https://curl.se/libcurl/c/libcurl-easy.html). The server side interface is inspired by [python's built-in httpserver](https://docs.python.org/3/library/http.server.html). 
 
 Here is a high level overview of the multi-threading file sharing server and client:
-![Multi-threading client and server](/assets/images/multi-threading_server_and_client.png)
+![Multi-threading client and server]({{ '/assets/images/multi-threading_server_and_client.png' | relative_url }})
 
 In this project, I turn this file sharing system into one that leverages shared memory based IPC (Inter-Process Communication). The initial design is based on the boss-worker introduced by the [Birrell paper](http://birrell.org/andrew/papers/035-Threads.pdf). This allows it to serve multiple connections at once. 
 
 Converting the code that retrieves the file from disc with code that retrieves it from web, the webproxy pass in a server url which will be passed into the callback registered via the GFS_WORKER_FUNC. We would need a buffer to hold the url, and construct a full url from the argument passed in. 
 
-![part1](/assets/images/part1.png)
+![part1]({{ '/assets/images/part1.png' | relative_url }})
 
 Then a new curl easy setopt object is created. I define a function to accept LibCurl’s output into a struct (BufferStruct) and pass a function pointer to LC. This callback function writes the output to BufferStruct. 
 
@@ -26,13 +26,13 @@ Based on the response code the client can send header and the data chunk by chun
 
 Next, I add a cache process that will run on the same machine as the proxy and communicate with it via shared memory. For transferring local files efficiently, the data channel is seperated from the command channel. File content is transferred through the data channel and transfer command is transferred through the command channel. The data channel is implemented using shared memory and the command channel is implemented using other IPC mechanisms, such as message queue.
 
-![part2](/assets/images/part2.png)
+![part2]({{ '/assets/images/part2.png' | relative_url }})
 
 **Design considerations:**<br>
 Multithreaded proxy will interreact with multithreaded cache processes located on the same physical machine. Each of the request received by A worker of the proxy need to be relay over to the cache, the cache need to respond to request with the file content with the specific requirement that file transfer must be performed using shared memory and only one shared memory segment need to be used for a file transfer.
 
 Here is the design diagram for major components:
-![File Server Design](/assets/images/file_server_design.png)
+![File Server Design]({{ '/assets/images/file_server_design.png' | relative_url }})
 
 The first important design choice is the separation of data channel and communication channel.  Use the shared memory only for storing file content and pass the request via message queue. The separation has many benefits, first and foremost is the simplicity compared with only using shared memory for both storing file and pass request.  The shared memory would require complex coordination. Both cache and proxy worker need to take turns to write and read to it, because it’s sending data in chunks. It will reduce complexity if request passing functionality can be seperated. Secondly, because the request needs to make its way from proxy to cache in one direction only, it makes sense to use a message queue for that. 
 
