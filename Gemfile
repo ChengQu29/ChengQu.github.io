@@ -1,7 +1,7 @@
 source "https://rubygems.org"
-gem 'bigdecimal', '~> 3.1'
-gem 'base64', '~> 0.1.0'
 
-gem "jekyll", "~> 3.7"
-gem "minimal-mistakes-jekyll"
-gem 'kramdown-parser-gfm'
+# Use the GitHub Pages dependency bundle to ensure compatible versions
+gem "github-pages", group: :jekyll_plugins
+
+# Needed when using remote_theme
+gem "jekyll-remote-theme"
