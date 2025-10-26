@@ -7,7 +7,7 @@ categories: [blog]
 tags: [C]
 ---
 
-Welcome to my first post! Here’s my explanation of how to implement callbacks, one of the key building blocks of a multi-threading file sharing server I developed in the OMSCS program.
+Welcome to my first post! Callback is one of the key building blocks of a multi-threading file sharing server I developed in the OMSCS program.
 
 A callback is a function that you pass as an argument to another function. The receiving function can then invoke the callback at a particular point, allowing for flexible and resuable code.
 
@@ -76,7 +76,7 @@ public class CallbackExample {
     }
 }
 ```
-Because interface defines a contract, and if an object implements that interface it must provide the implementation. And object can be passed around in Java. At runtime, `processNumber` does not care which specific implementation it gets. This is exactly the callback pattern: a function is passed as an argument and invoked later. 
+A Java interface defines a contract that any implementing class must fulfill by providing concrete implementations of its methods. Since Java objects can be passed around, the `processNumber` method doesn’t need to know which specific implementation it receives at runtime. This is exactly the callback pattern: a function is passed as an argument and invoked later. 
 
 Java 11 introduced lambda expression, so implementing callbacks in Java looks similar to that of the first example in Javascript now:
 ```java
