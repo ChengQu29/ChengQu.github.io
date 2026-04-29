@@ -54,7 +54,7 @@ The problem(s) I encountered in this project:
 -	Failed at mq_open.
 -	Proxy hung
 -	Failed the stress test.
--	Everything passed but still failed Gradescope, got 404 path not found error. 
+-	404 path not found error. 
 
 How I tested and resolved the issue:
 
